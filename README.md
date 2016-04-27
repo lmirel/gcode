@@ -7,14 +7,20 @@ I created this utility so that if you have the gcode file of your print that sto
 You have to have python installed and add the python installation directories to your PATH.
 
 ## Install
-> git clone https://github.com/jensenj08/gcode 
-> python gcode/setup.py install
+```
+git clone https://github.com/jensenj08/gcode 
+python gcode/setup.py install
+```
 
 ## Usage
 ### I know the line that the print was on when it stopped 
 This example is for when the print stopped when it was on line 10
-> gcode -l 10
+```
+gcode -l 10
+```
 
 ### I don't know the line number where the print stopped 
 This example shows when we don't know the line number that the print was on, but we do know that the print is currently 12.14mm tall, and the extrusion height is set to .4mm
-> gcode -d 12.14 0.4
+```
+gcode -d 12.14 0.4
+```
