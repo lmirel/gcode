@@ -9,6 +9,7 @@ This utility default locations work by default with repetier host.
 You have to have python installed and add the python installation directories to your PATH.
 
 ## Install
+Run these commands to install the ulility: 
 ```
 git clone https://github.com/jensenj08/gcode 
 python gcode/setup.py install
@@ -16,13 +17,16 @@ python gcode/setup.py install
 
 ## Usage
 ### I know the line that the print was on when it stopped 
-This example is for when the print stopped when it was on line 10
+If the print stopped printing at line 10, run this command:
 ```
 gcode -l 10
 ```
 
 ### I don't know the line number where the print stopped 
-This example shows when we don't know the line number that the print was on, but we do know that the print is currently 12.14mm tall, and the extrusion height is set to .4mm
+If your print was 12.14mm tall when it stopped, and the extrusion height is set to .4mm, then run this command.
 ```
 gcode -d 12.14 0.4
 ```
+
+### The output
+These commands will output a file onto your desktop called output.gcode. Load this file into your 3d printer and your print will resume where it left off.
