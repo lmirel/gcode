@@ -16,7 +16,7 @@ def parseArguments():
 	for count, arg in enumerate(sys.argv):
 		#rewrite a file starting at a layer number
 		if (arg == '-l' or arg == '--layer') and (len(sys.argv) > count + 1):
-			settings['layer'] = sys.argv[count + 1]	
+			settings['layer'] = int(sys.argv[count + 1])
 			settings['help'] = False
 		#rewrite a file using entered in  dimensions
 		elif (arg == '-d' or arg == '--dimensions') and (len(sys.argv) > count + 2):
