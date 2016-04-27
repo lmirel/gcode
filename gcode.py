@@ -10,21 +10,43 @@ outputFile = expanduser("~") + '\Desktop\output.gcode'
 
 #The layer to start pringing at
 layerNumber = 1
-argFound = False
+showHelp = True
 for count, arg in enumerate(sys.argv):
-	if arg == '-l':
+	#Rewrite a file starting at a layer number
+	if (arg == '-l' or arg == '--layer') and (len(sys.argv) > count + 1):
 		#Add 1 to get rid of the worble
 		layerNumber = sys.argv[count + 1]	
-		argFound = True
-	elif arg == '-h':
-		if len(sys.argv) > count + 2:
-			totalHeight = float(sys.argv[count + 1]);
-			extrusionHeight = float(sys.argv[count + 2])
-			layerNumber = math.ceil(totalHeight / extrusionHeight) + 1
-			argFound = True
+		showHelp = False
+	#Rewrite a file using entered in  dimensions
+	elif (arg == '-d' or arg == '--dimensions') and (len(sys.argv) > count + 2):
+		totalHeight = float(sys.argv[count + 1]);
+		extrusionHeight = float(sys.argv[count + 2])
+		layerNumber = math.ceil(totalHeight / extrusionHeight) + 1
+		showHelp = False
 
-if argFound == False:
-	print("Syntax: gcode.py (-l <layer_number>)|(-h <measured_height> <extrusion_height>)")
+if showHelp == True:
+	print("+------------------------------------------------------------------+")
+	print("| GCode Repair Tool                                                |")
+	print("+------------------------------------------------------------------+")
+	print("| The purpose of this program is to resume a print that has        |")
+	print("| previously died.                                                 |")
+	print("|                                                                  |")
+	print("| If you know the layer number where the print                     |")
+	print("| died at, you resume printing at that layer.                      |")
+	print("|                                                                  |")
+	print("| If you don't have which layer the print stopped at you can take  |")
+	print("| the total prited height of your object on the print bed (in mm)  |")
+	print("| followed by the extrusion height of the print in milimeters.     |")
+	print("+------------------------------------------------------------------+")
+	print("|                                                                  |")
+	print("| Syntax:                                                          |")
+	print("|    gcode.py <argument>                                           |")
+	print("| Arguments:                                                       |")
+	print("|     --dimensions, -d:                                            |")
+	print("|          -d <total_height> <extrusion_height>                    |")
+	print("|     --layer, -l:                                                 |")
+	print("|          -l <layer_number>                                       |")
+	print("+------------------------------------------------------------------+")
 	sys.exit()
 	
 
