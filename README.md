@@ -3,6 +3,8 @@ Normally when you print something on your 3d printer, if your printer stops, you
 
 I created this utility so that if you have the gcode file of your print that stopped, you can measure it's height and continue printing where it left off.
 
+This utility default locations work by default with repetier host.
+
 ## Installation Requirements
 You have to have python installed and add the python installation directories to your PATH.
 
