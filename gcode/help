@@ -1,0 +1,10 @@
+Usage: gcode [-d total_height extrusion_height] [-l layer_number] 
+             [-i input_file] [-o output_file]
+
+Options:
+    -d       Reslice the gcode according to the height of the material
+	         which has already been printed.
+    -l       The print layer number which you want to resume the print 
+             from
+	-i       Input file to create the slice from 
+	-o       The output file to be generated
