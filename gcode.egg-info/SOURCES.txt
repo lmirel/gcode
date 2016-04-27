@@ -1,0 +1,11 @@
+setup.py
+gcode/__init__.py
+gcode/__main__.py
+gcode/arguments.py
+gcode/instructions.py
+gcode/slicer.py
+gcode.egg-info/PKG-INFO
+gcode.egg-info/SOURCES.txt
+gcode.egg-info/dependency_links.txt
+gcode.egg-info/entry_points.txt
+gcode.egg-info/top_level.txt

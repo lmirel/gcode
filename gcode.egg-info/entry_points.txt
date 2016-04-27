@@ -1,0 +1,3 @@
+[console_scripts]
+gcode = gcode.__main__:main
+

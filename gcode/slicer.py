@@ -1,7 +1,7 @@
 #!python
  
 def sliceTopHalf(inputFile, outputFile, layerNumber):
-	print("Writing From Layer Number: " + str(layerNumber)
+	print("Writing From Layer Number: " + str(layerNumber))
 		
 	#Using the newer with construct to close the file automatically.
 	with open(inputFile) as inGcode:
@@ -11,7 +11,7 @@ def sliceTopHalf(inputFile, outputFile, layerNumber):
 	process = False
 	lineNum = 0
 	outGcode = open(outputFile,'w')
-	
+
 	for n, line in enumerate(data, 1):
 		if len(line) > 3:
 			if line[3] == 'Z':	

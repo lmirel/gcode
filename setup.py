@@ -1,12 +1,16 @@
-#!python
+from setuptools import setup, find_packages
 
-from distutils.core import setup
-
-setup(name='Distutils',
-      version='0.2',
-      description='Restart prints with repatier after they have stopped.',
-      author='Jeffrey Jensen',
-      author_email='jensenj08@gmail.com',
-      url='https://github.com/jensenj08/gcode',
-      packages=['distutils', 'distutils.command'],
-     )
+setup(name='gcode',
+      version='0.2.0',
+      packages=find_packages(),
+	  py_modules = [
+            'gcode.arguments', 
+            'gcode.instructions',
+			'gcode.slicer',
+            ],
+      entry_points={
+          'console_scripts': [
+              'gcode = gcode.__main__:main'
+          ]
+      },
+      )
