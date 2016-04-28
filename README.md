@@ -6,13 +6,18 @@ I created this utility so that if you have the gcode file of your print that sto
 This utility default locations work by default with repetier host.
 
 ## Installation Requirements
-You have to have python installed and add the python installation directories to your PATH.
+You have to have [python](https://www.python.org/downloads/) installed and add the python installation directories to your PATH.
 
 ## Install
+### Manual installation
 Run these commands to install the ulility: 
 ```
 git clone https://github.com/jensenj08/gcode 
 python gcode/setup.py install
+```
+### Using Python's pip
+```
+pip install gcode
 ```
 
 ## Usage
